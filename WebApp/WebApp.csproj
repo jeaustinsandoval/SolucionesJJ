@@ -66,6 +66,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Entity\Entity.csproj" />
+    <ProjectReference Include="..\WBL\WBL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="wwwroot\Assets\%40types\Apexchart\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\axios\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.ts" />
@@ -103,5 +108,7 @@
     <TypeScriptCompile Include="wwwroot\Assets\Plugin\sweetalert\SwalConfig.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\Plugin\vue\VueLoaderTemplate.ts" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
