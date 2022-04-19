@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\App\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.js" />
+    <None Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.js.map" />
+    <None Include="wwwroot\Assets\%40types\global.js" />
+    <None Include="wwwroot\Assets\%40types\global.js.map" />
+    <None Include="wwwroot\Assets\%40types\SweetAlert\Sweetalert.js" />
+    <None Include="wwwroot\Assets\%40types\SweetAlert\Sweetalert.js.map" />
+    <None Include="wwwroot\Assets\%40types\vue-template-compiler\VueTemplateCompiler.umd.js" />
+    <None Include="wwwroot\Assets\Plugin\axios\axios.js" />
+    <None Include="wwwroot\Assets\Plugin\axios\axios.map" />
+    <None Include="wwwroot\Assets\Plugin\axios\axios.min.js" />
+    <None Include="wwwroot\Assets\Plugin\axios\axios.min.map" />
+    <None Include="wwwroot\Assets\Plugin\bvalidator\bootstrapValidator.js" />
+    <None Include="wwwroot\Assets\Plugin\bvalidator\bv-validators.js" />
+    <None Include="wwwroot\Assets\Plugin\bvalidator\bv-validators.js.map" />
+    <None Include="wwwroot\Assets\Plugin\bvalidator\es_ES.js" />
+    <None Include="wwwroot\Assets\Plugin\bvalidator\FormValidateConfig.js" />
+    <None Include="wwwroot\Assets\Plugin\bvalidator\FormValidateConfig.js.map" />
+    <None Include="wwwroot\Assets\Plugin\CoreFile\CoreFile.js" />
+    <None Include="wwwroot\Assets\Plugin\CoreFile\CoreFile.js.map" />
+    <None Include="wwwroot\Assets\Plugin\jquery\jquery.js" />
+    <None Include="wwwroot\Assets\Plugin\jquery\jquery.min.js" />
+    <None Include="wwwroot\Assets\Plugin\jquery\jquery.min.map" />
+    <None Include="wwwroot\Assets\Plugin\jquery\jquery.slim.js" />
+    <None Include="wwwroot\Assets\Plugin\jquery\jquery.slim.min.js" />
+    <None Include="wwwroot\Assets\Plugin\jquery\jquery.slim.min.map" />
+    <None Include="wwwroot\Assets\Plugin\linq\linq.js" />
+    <None Include="wwwroot\Assets\Plugin\polyfill\classlist-js-polyfill.js" />
+    <None Include="wwwroot\Assets\Plugin\polyfill\polyfill.min.js" />
+    <None Include="wwwroot\Assets\Plugin\sweetalert\SwalConfig.js" />
+    <None Include="wwwroot\Assets\Plugin\sweetalert\SwalConfig.js.map" />
+    <None Include="wwwroot\Assets\Plugin\sweetalert\sweetalert2%4011.js" />
+    <None Include="wwwroot\Assets\Plugin\vue\vue-async-computed.js" />
+    <None Include="wwwroot\Assets\Plugin\vue\vue-class-component.min.js" />
+    <None Include="wwwroot\Assets\Plugin\vue\vue-property-decorator.umd.min.js" />
+    <None Include="wwwroot\Assets\Plugin\vue\vue.min.js" />
+    <None Include="wwwroot\Assets\Plugin\vue\VueLoaderTemplate.js" />
+    <None Include="wwwroot\Assets\Plugin\vue\VueLoaderTemplate.js.map" />
+    <None Include="wwwroot\Assets\template\app-style-switcher.js" />
+    <None Include="wwwroot\Assets\template\app.init.js" />
+    <None Include="wwwroot\Assets\template\app.min.js" />
+    <None Include="wwwroot\Assets\template\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\Assets\template\custom.min.js" />
+    <None Include="wwwroot\Assets\template\feather.min.js" />
+    <None Include="wwwroot\Assets\template\icons\font-awesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\Assets\template\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff2" />
+    <None Include="wwwroot\Assets\template\perfect-scrollbar.jquery.min.js" />
+    <None Include="wwwroot\Assets\template\sidebarmenu.js" />
+    <None Include="wwwroot\Assets\template\sparkline.js" />
+    <None Include="wwwroot\Assets\template\waves.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\Apexchart\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\axios\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\bootstrap-validator\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\bootstrap\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\datatables.net\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\global.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\jquery\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\Linqjs\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\overlayscrollbars\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\popper.js\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\SweetAlert\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\SweetAlert\Sweetalert.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-async-computed\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-class-component\component.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-class-component\data.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-class-component\declarations.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-class-component\hooks.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-class-component\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-class-component\reflect.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-class-component\util.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-property-decorator\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-property-decorator\vue-property-decorator.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-template-compiler\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\vue-template-compiler\VueTemplateCompiler.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\Vue\index.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\Vue\options.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\Vue\plugin.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\Vue\umd.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\Vue\vnode.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\%40types\Vue\vue.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\Plugin\bvalidator\bv-validators.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\Plugin\bvalidator\FormValidateConfig.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\Plugin\CoreFile\CoreFile.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\Plugin\sweetalert\SwalConfig.ts" />
+    <TypeScriptCompile Include="wwwroot\Assets\Plugin\vue\VueLoaderTemplate.ts" />
+  </ItemGroup>
+
+</Project>
