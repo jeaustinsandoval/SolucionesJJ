@@ -1,5 +1,5 @@
 ﻿-- =============================================
--- Author:        <Jeaustin Sandoval - Jeffry Vargas>
+-- Author:        <Jeaustin Sandoval>
 -- Create date: <19/4/22>
 -- Description:    <Procedimiento que actualiza los datos>
 -- =============================================
