@@ -1,5 +1,5 @@
-﻿using BD;
-using Entity;
+﻿using Entity;
+using BD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +8,20 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    
-    public class ClienteEntity 
+    public interface IClienteService
+    {
+        Task<DBEntity> CREATE(ClienteEntity entity);
+        Task<DBEntity> DELETE(ClienteEntity entity);
+        Task<IEnumerable<ClienteEntity>> GET();
+        Task<ClienteEntity> GETBYID(ClienteEntity entity);
+        Task<DBEntity> UPDATE(ClienteEntity entity);
+    }
+
+    public class ClienteService : IClienteService
     {
         private readonly IDataAccess sql;
 
-        public ClienteEntity(IDataAccess _sql)
+        public ClienteService(IDataAccess _sql)
         {
             sql = _sql;
         }
@@ -44,7 +52,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryFirstAsync<ClienteEntity>("dbo.ClienteObtener", new { entity. });
+                var result = sql.QueryFirstAsync<ClienteEntity>("dbo.ClienteObtener", new { entity.IdCliente });
                 return await result;
             }
             catch (Exception)
@@ -63,7 +71,20 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("dbo.ClienteInsertar", new
                 {
-                    entity.
+                    entity.Identificacion,
+                    entity.IdTipoIdentificacion,
+                    entity.Nombre,
+                    entity.PrimerApellido,
+                    entity.SegundoApellido,
+                    entity.FechaNacimiento,
+                    entity.Nacionalidad,
+                    entity.FechaDefuncion,
+                    entity.Genero,
+                    entity.NombreApellidosPadre,
+                    entity.NombreApellidosMadre,
+                    entity.Pasaporte,
+                    entity.CuentaIBAN,
+                    entity.CorreoNotifica
                 });
 
 
@@ -85,13 +106,21 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("dbo.ClienteActualizar", new
                 {
-                    entity.IdProveedor,
+                    entity.IdCliente,
                     entity.Identificacion,
+                    entity.IdTipoIdentificacion,
                     entity.Nombre,
                     entity.PrimerApellido,
                     entity.SegundoApellido,
-                    entity.Edad,
-                    entity.FechaNacimiento
+                    entity.FechaNacimiento,
+                    entity.Nacionalidad,
+                    entity.FechaDefuncion,
+                    entity.Genero,
+                    entity.NombreApellidosPadre,
+                    entity.NombreApellidosMadre,
+                    entity.Pasaporte,
+                    entity.CuentaIBAN,
+                    entity.CorreoNotifica
                 });
 
 
@@ -112,7 +141,7 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("dbo.ProveedorEliminar", new
                 {
-                    entity.IdProveedor
+                    entity.IdCliente
 
                 });
 
