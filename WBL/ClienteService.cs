@@ -44,7 +44,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryFirstAsync<ClienteEntity>("dbo.ClienteObtener", new { entity.IdCliente });
+                var result = sql.QueryFirstAsync<ClienteEntity>("dbo.ClienteObtener", new { entity. });
                 return await result;
             }
             catch (Exception)

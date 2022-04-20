@@ -57,13 +57,10 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
-    <Folder Include="dbo\Tables" />
     <Folder Include="dbo\StoreProcedures" />
+    <Folder Include="dbo\Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Servicio.sql" />
-    <Build Include="dbo\Tables\Cliente.sql" />
-    <Build Include="dbo\Tables\Solicitud.sql" />
     <Build Include="dbo\StoreProcedures\ClienteObtener.sql" />
     <Build Include="dbo\StoreProcedures\ClienteInsertar.sql" />
     <Build Include="dbo\StoreProcedures\ClienteEliminar.sql" />
@@ -74,5 +71,11 @@
     <Build Include="dbo\StoreProcedures\SolicitudEliminar.sql" />
     <Build Include="dbo\StoreProcedures\ServicioObtener.sql" />
     <Build Include="dbo\StoreProcedures\ServicioLista.sql" />
+    <Build Include="dbo\Tables\Cliente.sql" />
+    <Build Include="dbo\Tables\Solicitud.sql" />
+    <Build Include="dbo\Tables\Servicio.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="BaseDatos.refactorlog" />
   </ItemGroup>
 </Project>
