@@ -8,17 +8,8 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public interface IClienteEntity
-    {
-        Task<DBEntity> CREATE(ClienteEntity entity);
-        Task<DBEntity> DELETE(ClienteEntity entity);
-        Task<IEnumerable<ClienteEntity>> GET();
-        Task<IEnumerable<ClienteEntity>> GETLISTA();
-        Task<ClienteEntity> GETBYID(ClienteEntity entity);
-        Task<DBEntity> UPDATE(ClienteEntity entity);
-    }
-
-    public class ClienteEntity : IClienteEntity
+    
+    public class ClienteEntity 
     {
         private readonly IDataAccess sql;
 
@@ -46,21 +37,7 @@ namespace WBL
 
         }
 
-        public async Task<IEnumerable<ClienteEntity>> GETLISTA()
-        {
-            try
-            {
-                var result = sql.QueryAsync<ClienteEntity>("dbo.ClienteLista");
-                return await result;
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-
-
-        }
 
         //MetodoGetById
         public async Task<ClienteEntity> GETBYID(ClienteEntity entity)
@@ -86,12 +63,7 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("dbo.ClienteInsertar", new
                 {
-                    entity.,
-                    entity.Nombre,
-                    entity.PrimerApellido,
-                    entity.SegundoApellido,
-                    entity.Edad,
-                    entity.FechaNacimiento
+                    entity.
                 });
 
 
