@@ -56,5 +56,25 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\StoreProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Servicio.sql" />
+    <Build Include="dbo\Tables\Cliente.sql" />
+    <Build Include="dbo\Tables\Solicitud.sql" />
+    <Build Include="dbo\StoreProcedures\ClienteObtener.sql" />
+    <Build Include="dbo\StoreProcedures\ClienteInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\ClienteEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\ClienteActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\SolicitudActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\SolicitudInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\SolicitudObtener.sql" />
+    <Build Include="dbo\StoreProcedures\SolicitudEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\ServicioObtener.sql" />
+    <Build Include="dbo\StoreProcedures\ServicioInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\ServicioEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\ServicioActualizar.sql" />
   </ItemGroup>
 </Project>

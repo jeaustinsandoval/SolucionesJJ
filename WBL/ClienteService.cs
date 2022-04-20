@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public interface IProveedorService
+    public interface IClienteEntity
     {
-        Task<DBEntity> CREATE(ProveedorEntity entity);
-        Task<DBEntity> DELETE(ProveedorEntity entity);
-        Task<IEnumerable<ProveedorEntity>> GET();
-        Task<IEnumerable<ProveedorEntity>> GETLISTA();
-        Task<ProveedorEntity> GETBYID(ProveedorEntity entity);
-        Task<DBEntity> UPDATE(ProveedorEntity entity);
+        Task<DBEntity> CREATE(ClienteEntity entity);
+        Task<DBEntity> DELETE(ClienteEntity entity);
+        Task<IEnumerable<ClienteEntity>> GET();
+        Task<IEnumerable<ClienteEntity>> GETLISTA();
+        Task<ClienteEntity> GETBYID(ClienteEntity entity);
+        Task<DBEntity> UPDATE(ClienteEntity entity);
     }
 
-    public class ProveedorService : IProveedorService
+    public class ClienteEntity : IClienteEntity
     {
         private readonly IDataAccess sql;
 
-        public ProveedorService(IDataAccess _sql)
+        public ClienteEntity(IDataAccess _sql)
         {
             sql = _sql;
         }
@@ -30,11 +30,11 @@ namespace WBL
         #region MetodosCRUD
 
         //Metodo Get
-        public async Task<IEnumerable<ProveedorEntity>> GET()
+        public async Task<IEnumerable<ClienteEntity>> GET()
         {
             try
             {
-                var result = sql.QueryAsync<ProveedorEntity>("dbo.ProveedorObtener");
+                var result = sql.QueryAsync<ClienteEntity>("dbo.ClienteObtener");
                 return await result;
             }
             catch (Exception)
@@ -46,11 +46,11 @@ namespace WBL
 
         }
 
-        public async Task<IEnumerable<ProveedorEntity>> GETLISTA()
+        public async Task<IEnumerable<ClienteEntity>> GETLISTA()
         {
             try
             {
-                var result = sql.QueryAsync<ProveedorEntity>("dbo.ProveedorLista");
+                var result = sql.QueryAsync<ClienteEntity>("dbo.ClienteLista");
                 return await result;
             }
             catch (Exception)
@@ -63,11 +63,11 @@ namespace WBL
         }
 
         //MetodoGetById
-        public async Task<ProveedorEntity> GETBYID(ProveedorEntity entity)
+        public async Task<ClienteEntity> GETBYID(ClienteEntity entity)
         {
             try
             {
-                var result = sql.QueryFirstAsync<ProveedorEntity>("dbo.ProveedorObtener", new { entity.IdProveedor });
+                var result = sql.QueryFirstAsync<ClienteEntity>("dbo.ClienteObtener", new { entity.IdCliente });
                 return await result;
             }
             catch (Exception)
@@ -80,13 +80,13 @@ namespace WBL
         }
 
         //Metodo Create
-        public async Task<DBEntity> CREATE(ProveedorEntity entity)
+        public async Task<DBEntity> CREATE(ClienteEntity entity)
         {
             try
             {
-                var result = sql.ExecuteAsync("dbo.ProveedorInsertar", new
+                var result = sql.ExecuteAsync("dbo.ClienteInsertar", new
                 {
-                    entity.Identificacion,
+                    entity.,
                     entity.Nombre,
                     entity.PrimerApellido,
                     entity.SegundoApellido,
@@ -107,11 +107,11 @@ namespace WBL
 
 
         //Metodo Update
-        public async Task<DBEntity> UPDATE(ProveedorEntity entity)
+        public async Task<DBEntity> UPDATE(ClienteEntity entity)
         {
             try
             {
-                var result = sql.ExecuteAsync("dbo.ProveedorActualizar", new
+                var result = sql.ExecuteAsync("dbo.ClienteActualizar", new
                 {
                     entity.IdProveedor,
                     entity.Identificacion,
@@ -134,7 +134,7 @@ namespace WBL
         }
 
         //Metodo Delete
-        public async Task<DBEntity> DELETE(ProveedorEntity entity)
+        public async Task<DBEntity> DELETE(ClienteEntity entity)
         {
             try
             {
