@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Cliente]
 (
-	[IdCliente] INT NOT NULL CONSTRAINT [PK_Cliente] PRIMARY KEY CLUSTERED ([IdCliente] ASC), 
+	[IdCliente] INT NOT NULL IDENTITY(1,1) CONSTRAINT [PK_Cliente] PRIMARY KEY CLUSTERED ([IdCliente] ASC), 
     [Identificacion] VARCHAR(128) NULL, 
     [IdTipoIdentificacion] INT NULL, 
     [Nombre] VARCHAR(128) NULL, 
