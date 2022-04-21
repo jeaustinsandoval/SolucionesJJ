@@ -42,8 +42,6 @@ namespace WBL
 
                 throw;
             }
-
-
         }
 
         public async Task<IEnumerable<SolicitudEntity>> GETLISTA()
@@ -58,8 +56,6 @@ namespace WBL
 
                 throw;
             }
-
-
         }
 
         //MetodoGetById
@@ -75,8 +71,6 @@ namespace WBL
 
                 throw;
             }
-
-
         }
 
         //Metodo Create
@@ -94,8 +88,6 @@ namespace WBL
                     entity.UsuarioEntrega,
                     entity.Observaciones
                 });
-
-
                 return await result;
             }
             catch (Exception)
@@ -103,9 +95,7 @@ namespace WBL
 
                 throw;
             }
-
         }
-
 
         //Metodo Update
         public async Task<DBEntity> UPDATE(SolicitudEntity entity)
@@ -123,8 +113,6 @@ namespace WBL
                     entity.UsuarioEntrega,
                     entity.Observaciones
                 });
-
-
                 return await result;
             }
             catch (Exception)
@@ -132,7 +120,6 @@ namespace WBL
 
                 throw;
             }
-
         }
 
         //Metodo Delete
@@ -145,8 +132,6 @@ namespace WBL
                     entity.IdSolicitud
 
                 });
-
-
                 return await result;
             }
             catch (Exception)
@@ -154,7 +139,6 @@ namespace WBL
 
                 throw;
             }
-
         }
         #endregion
     }

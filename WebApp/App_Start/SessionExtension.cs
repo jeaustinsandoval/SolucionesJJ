@@ -23,7 +23,6 @@ namespace WebApp
         //        JsonSerializer.Deserialize<T>(value);
         //}
 
-
         //public static bool SessionOnline(this PageModel ct)
         //{
         //    var Session = ct.HttpContext.Session.Get<UsuariosEntity>(IApp.UsuarioSession);
@@ -36,6 +35,5 @@ namespace WebApp
         //        return true;
         //    }
         //}
-
     }
 }

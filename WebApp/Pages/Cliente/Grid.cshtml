@@ -1,0 +1,56 @@
+﻿@page
+@model WebApp.Pages.Cliente.GridModel
+@{
+}
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Cliente</h1>
+    <p class="mb-4">
+        Mantenimiento que permite consultar, crear, editar y eliminar clientes.
+    </p>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Consultar Cliente</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="GridView" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>IdCliente</th>
+                            <th>Identificación</th>
+                            <th>Nombre</th>
+                            <th>Primer Apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.GridList)
+                        {
+                            <tr>
+                                <td>@item.IdCliente</td>
+                                <td>@item.Identificacion</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.PrimerApellido</td>
+                                <td>@item.SegundoApellido</td>
+                                <td>
+                                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdCliente">
+                                        <i class='bx bx-edit-alt'></i>
+                                    </a>
+                                    <button type="button" class="btn btn-danger" onclick="GridCliente.OnclickEliminar(@item.IdCliente)">
+                                        <i class='bx bxs-trash'></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script defer src="~/App/Cliente/Grid.js"></script>
+}

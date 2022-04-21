@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\App\" />
+    <Folder Include="Pages\Solicitud\" />
   </ItemGroup>
 
   <ItemGroup>

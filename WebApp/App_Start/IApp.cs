@@ -7,7 +7,5 @@ namespace WebApp
 {
     public struct IApp
     {
-
-
     }
 }

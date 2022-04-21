@@ -27,7 +27,6 @@ namespace WBL
         }
 
         #region MetodosCRUD
-
         //Metodo Get
         public async Task<IEnumerable<ClienteEntity>> GET()
         {
@@ -41,11 +40,7 @@ namespace WBL
 
                 throw;
             }
-
-
         }
-
-
 
         //MetodoGetById
         public async Task<ClienteEntity> GETBYID(ClienteEntity entity)
@@ -60,8 +55,6 @@ namespace WBL
 
                 throw;
             }
-
-
         }
 
         //Metodo Create
@@ -86,8 +79,6 @@ namespace WBL
                     entity.CuentaIBAN,
                     entity.CorreoNotifica
                 });
-
-
                 return await result;
             }
             catch (Exception)
@@ -95,9 +86,7 @@ namespace WBL
 
                 throw;
             }
-
         }
-
 
         //Metodo Update
         public async Task<DBEntity> UPDATE(ClienteEntity entity)
@@ -122,8 +111,6 @@ namespace WBL
                     entity.CuentaIBAN,
                     entity.CorreoNotifica
                 });
-
-
                 return await result;
             }
             catch (Exception)
@@ -131,7 +118,6 @@ namespace WBL
 
                 throw;
             }
-
         }
 
         //Metodo Delete
@@ -139,13 +125,11 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("dbo.ProveedorEliminar", new
+                var result = sql.ExecuteAsync("dbo.ClienteEliminar", new
                 {
                     entity.IdCliente
 
                 });
-
-
                 return await result;
             }
             catch (Exception)
@@ -153,7 +137,6 @@ namespace WBL
 
                 throw;
             }
-
         }
         #endregion
     }
