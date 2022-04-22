@@ -29,17 +29,17 @@
                         <!-------------------------------------------------------------------------------------------------------------------------------->
                         <div class="form-group mb-2">
                             <label for="Entity.Cantidad" class="form-label">Cantidad</label>
-                            <input type="text" class="form-control" asp-for="Entity.Cantidad" v-model="Entity.Cantidad" required>
+                            <input type="number" class="form-control" asp-for="Entity.Cantidad" v-model="Entity.Cantidad" required>
                         </div>
                         <!-------------------------------------------------------------------------------------------------------------------------------->
                         <div class="form-group mb-2">
                             <label for="Entity.Monto" class="form-label">Monto</label>
-                            <input type="text" class="form-control" asp-for="Entity.Monto" v-model="Entity.Monto" required>
+                            <input type="text" class="form-control" asp-for="Entity.Monto" v-model="Entity.Monto" v-mask="'##.##.##.##.###'" required>
                         </div>
                         <!-------------------------------------------------------------------------------------------------------------------------------->
                         <div class="form-group mb-2">
                             <label for="Entity.FechaEntrega" class="form-label">Fecha entrega</label>
-                            <input type="date" class="form-control" asp-for="Entity.FechaEntrega" v-model="Entity.FechaEntrega">
+                            <input type="date" class="form-control" asp-for="Entity.FechaEntrega">
                         </div>
                         <!-------------------------------------------------------------------------------------------------------------------------------->
                         <div class="form-group mb-2">

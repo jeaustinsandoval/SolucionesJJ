@@ -35,12 +35,12 @@ namespace WebApp.Pages.Cliente
             }
         }
 
-        public async Task<JsonResult> OnDeleteEliminar(int idc)
+        public async Task<JsonResult> OnDeleteEliminar(int id)
         {
             try
             {
                 var result = await cliente.DELETE(new()
-                { IdCliente = idc });
+                { IdCliente = id });
                 return new JsonResult(result);
             }
             catch (Exception ex)

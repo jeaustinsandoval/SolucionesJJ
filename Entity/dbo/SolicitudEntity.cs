@@ -24,7 +24,7 @@ namespace Entity
         public virtual ServicioEntity Servicio { get; set; }
         public int Cantidad { get; set; }
         public decimal Monto { get; set; }
-        public DateTime FechaEntrega { get; set; }
+        public DateTime FechaEntrega { get; set; } = DateTime.Now;
         public string UsuarioEntrega { get; set; }
         public string Observaciones { get; set; }
     }

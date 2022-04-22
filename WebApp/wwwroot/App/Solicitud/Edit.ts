@@ -5,7 +5,7 @@
         {
             data:
             {
-                Formulario: "#FormEdit",  // nombre del id que se le dio al form en el Edit
+                Formulario: "#FormEdit",
                 Entity: Entity
             },
             methods: {

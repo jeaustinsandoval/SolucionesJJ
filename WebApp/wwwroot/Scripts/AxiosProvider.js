@@ -3,7 +3,7 @@ var App;
 (function (App) {
     var AxiosProvider;
     (function (AxiosProvider) {
-        AxiosProvider.EliminarCliente = function (idc) { return axios.delete("Cliente/Grid?handler=Eliminar&idc=" + idc).then(function (_a) {
+        AxiosProvider.EliminarCliente = function (idc) { return axios.delete("Cliente/Grid?handler=Eliminar&id=" + id).then(function (_a) {
             var data = _a.data;
             return data;
         }); };
