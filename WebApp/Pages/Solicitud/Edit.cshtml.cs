@@ -2,28 +2,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WBL;
-using Entity;
 
-namespace WebApp.Pages.Cliente
+namespace WebApp.Pages.Solicitud
 {
     public class EditModel : PageModel
     {
+        private readonly ISolicitudService solicitud;
         private readonly IClienteService cliente;
+        private readonly IServicioService servicio;
 
-        public EditModel(IClienteService cliente)
+        public EditModel(ISolicitudService solicitud, IClienteService cliente, IServicioService servicio)
         {
+            this.solicitud = solicitud;
             this.cliente = cliente;
+            this.servicio = servicio;
         }
 
-        [BindProperty(SupportsGet = true)] 
+        [BindProperty(SupportsGet = true)]
         public int? Id { get; set; }
 
         [BindProperty]
         [FromBody]
-        public ClienteEntity Entity { get; set; } = new ClienteEntity();
+        public SolicitudEntity Entity { get; set; } = new SolicitudEntity();
+        public IEnumerable<ClienteEntity> ClienteLista { get; set; } = new List<ClienteEntity>();
+        public IEnumerable<ServicioEntity> ServicioLista { get; set; } = new List<ServicioEntity>();
 
         public async Task<IActionResult> OnGet()
         {
@@ -31,11 +37,15 @@ namespace WebApp.Pages.Cliente
             {
                 if (Id.HasValue)
                 {
-                    Entity = await cliente.GETBYID(new()
+                    Entity = await solicitud.GETBYID(new()
                     {
-                        IdCliente = Id
+                        IdSolicitud = Id
                     });
                 }
+
+                ClienteLista = await cliente.GETLISTA();
+                ServicioLista = await servicio.GETLISTA();
+
                 return Page();
             }
             catch (Exception ex)
@@ -49,10 +59,10 @@ namespace WebApp.Pages.Cliente
             try
             {
                 var result = new DBEntity();
-                if (Entity.IdCliente.HasValue) 
-                    result = await cliente.UPDATE(Entity);
+                if (Entity.IdSolicitud.HasValue)
+                    result = await solicitud.UPDATE(Entity);
                 else
-                    result = await cliente.CREATE(Entity);
+                    result = await solicitud.CREATE(Entity);
 
                 return new JsonResult(result);
             }

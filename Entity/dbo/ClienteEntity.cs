@@ -8,6 +8,13 @@ namespace Entity
 {
     public class ClienteEntity : DBEntity
     {
+        public ClienteEntity()
+        {
+            IdTipoIdentificacion = 1;
+            Nacionalidad = 1;
+            Genero = "M";
+        }
+
         public int? IdCliente { get; set; }
         public string Identificacion { get; set; }
         public int? IdTipoIdentificacion { get; set; }

@@ -8,7 +8,6 @@
 CREATE PROCEDURE [dbo].[SolicitudInsertar]
 -------------------------------------------------
  
- @IdSolicitud INT ,
  @IdCliente INT ,
  @IdServicio INT ,
  @Cantidad INT ,
@@ -27,7 +26,6 @@ AS
 
   INSERT INTO dbo.Solicitud
   (
-	 IdSolicitud ,
 	 IdCliente,
 	 IdServicio  ,
 	 Cantidad  ,
@@ -35,11 +33,9 @@ AS
 	 FechaEntrega ,
 	 UsuarioEntrega ,
 	 Observaciones 
-
   )
   VALUES
   (
-	 @IdSolicitud ,
 	 @IdCliente,
 	 @IdServicio  ,
 	 @Cantidad  ,
@@ -47,7 +43,6 @@ AS
 	 @FechaEntrega ,
 	 @UsuarioEntrega ,
 	 @Observaciones 
-
   )
 
   COMMIT TRANSACTION TRASA

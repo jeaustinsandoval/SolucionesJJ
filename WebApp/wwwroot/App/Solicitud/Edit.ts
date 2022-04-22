@@ -1,4 +1,4 @@
-﻿namespace ClienteEdit {
+﻿namespace SolicitudEdit {
 
     var Entity = $("#AppEdit").data("entity")
     var Formulario = new Vue(
@@ -13,13 +13,13 @@
                     if (BValidateData(this.Formulario)) {
                         Loading.fire("Guardando..");
 
-                        App.AxiosProvider.GuardarCliente(this.Entity).then(data => {
+                        App.AxiosProvider.GuardarSolicitud(this.Entity).then(data => {
                             Loading.close();
 
                             if (data.CodeError == 0) {
 
-                                Toast.fire({ title: "El registro se inserto correctamente", icon: "success" }).then
-                                    (() => window.location.href = "Cliente/Grid")
+                                Toast.fire({ title: "El registro se insertó correctamente", icon: "success" }).then
+                                    (() => window.location.href = "Solicitud/Grid")
                             } else {
                                 Toast.fire({ title: data.MsgError, icon: "error" })
 

@@ -1,0 +1,61 @@
+﻿@page
+@model WebApp.Pages.Solicitud.GridModel
+@{
+}
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Solicitud de servicio</h1>
+    <p class="mb-4">
+        Mantenimiento que permite consultar, crear, editar y eliminar solicitudes de servicio.
+    </p>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Consultar Solicitud</h6>
+        </div>
+        <div class="card-body">
+            <a class="btn btn-primary" asp-page="Edit">
+                <i class='bx bx-add-to-queue'></i>
+                Nueva Solicitud
+            </a>
+            <p></p>
+            <div class="table-responsive">
+                <table id="GridView" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>IdSolicitud</th>
+                            <th>Cliente</th>
+                            <th>Servicio</th>
+                            <th>Cantidad</th>
+                            <th>Monto</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.GridList)
+                        {
+                        <tr>
+                            <td>@item.IdSolicitud</td>
+                            <td>@item.Cliente?.Nombre</td>
+                            <td>@item.Servicio?.NombreServicio</td>
+                            <td>@item.Cantidad</td>
+                            <td>@item.Monto</td>
+                            <td>
+                                <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdSolicitud">
+                                    <i class='bx bx-edit-alt'></i>
+                                </a>
+                                <button type="button" class="btn btn-danger" onclick="GridSolicitud.OnclickEliminar(@item.IdSolicitud)">
+                                    <i class='bx bxs-trash'></i>
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script defer src="~/App/Solicitud/Grid.js"></script>
+}

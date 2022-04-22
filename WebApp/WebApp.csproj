@@ -7,14 +7,11 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\App\Cliente\Edit.ts" />
+    <Content Remove="wwwroot\App\Solicitud\Edit.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.6" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Solicitud\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -76,6 +73,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\App\Cliente\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Solicitud\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\Apexchart\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\axios\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.ts" />
